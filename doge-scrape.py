@@ -205,7 +205,7 @@ def extend_contract_data(contract_df,dt):
     return pd.concat([contract_df.reset_index().drop('index',axis=1),fpds_df],axis=1)
 
 def extend_grant_data(grant_df,dt):
-    api_root = 'https://api.usaspending.gov/api/v2/awards/'
+    api_root = 'https://api.usaspending.gov/api/v2/agency/012/awards/'
     usas_df = pd.DataFrame([])
     rh = req.utils.default_headers()
     for link in tqdm(grant_df.link.values):
